@@ -1,0 +1,53 @@
+.feed {
+    display: flex;
+    justify-content: space-around ;
+}
+.button{
+    display: flex;
+    float: right;
+
+}
+.eBtn{
+    box-shadow: rgb(161, 161, 29);
+	border-radius:5px;
+	border:1px solid rgb(161, 161, 29);
+	display:inline-block;
+	cursor:pointer;
+	color:rgb(161, 161, 29);
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+    background-color: none;
+}
+
+.sBtn{
+    box-shadow: rgb(0, 68, 255);
+	border-radius:5px;
+	border:1px solid rgb(0, 68, 255);
+	display:inline-block;
+	cursor:pointer;
+	color:rgb(0, 68, 255);
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+    background-color: none;
+}
+
+.nBtn{
+    box-shadow: rgb(27, 143, 85);
+	border-radius:5px;
+	border:1px solid rgb(27, 143, 85);
+	display:inline-block;
+	cursor:pointer;
+	color:rgb(27, 143, 85);
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+	text-shadow:rgb(27, 143, 85);
+    background-color: none;
+}

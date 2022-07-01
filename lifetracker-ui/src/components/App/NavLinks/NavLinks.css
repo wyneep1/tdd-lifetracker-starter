@@ -1,0 +1,27 @@
+.nav-links{
+    max-width: 30vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+  }
+  .nav-links .nav-link {
+    text-decoration: none;
+    color: white;
+  }
+  .hidden {
+    display: none;
+}
+.not-hidden {
+    text-decoration: none;
+
+}
+
+.nav-links li{
+   
+    list-style-type: none;
+
+}
