@@ -5,7 +5,7 @@ const {BCRYPT_WORK_FACTOR} = require('../config')
 
 
 class User{
-    static async makePublicUser(user) {
+    static makePublicUser(user) {
         return {
             id: user.id,
             email: user.email,
@@ -23,7 +23,7 @@ static async login(credentials) {
         if (!credentials.hasOwnProperty(field)) {
             throw new BadRequestError(`Missing ${field} in request body.`)
         }
-    })
+    });
     //looking the user in the db by email
     const user = await User.fetchUserByEmail(credentials.email)
     if (user) {
@@ -44,7 +44,7 @@ static async register(credentials){
         if (!credentials.hasOwnProperty(field)) {
             throw new BadRequestError(`Missing ${field} in request body.`)
         }
-    })
+    });
 
     if(credentials.email.indexOf('@') <= 0) {
         throw new BadRequestError('Invalid email')

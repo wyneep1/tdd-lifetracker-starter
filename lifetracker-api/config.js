@@ -6,7 +6,7 @@ const SECRET_KEY = process.env.SECRET_KEY || "blaheddjnjnfnfjfjfngjfngjng";
 
 function getDatabaseUri() {
     const dbUser = process.env.DATABASE_USER || "postgres"
-    const dbPass = process.env.DATABASE_PASS ? encodeURI(process.env.DATABASE_PASS) : "postgres"
+    const dbPass = process.env.DATABASE_PASS ? encodeURI(process.env.DATABASE_PASS) : "Youngqueen8$"
     const dbHost = process.env.DATABASE_HOST || "localhost"
     const dbPort = process.env.DATABASE_PORT || 5432
     const dbName = process.env.DATABASE_NAME || "lifetracker"
@@ -30,5 +30,5 @@ module.exports  = {
     PORT,
     BCRYPT_WORK_FACTOR,
     getDatabaseUri,
-    SECRET_KEY
+    SECRET_KEY,
 }

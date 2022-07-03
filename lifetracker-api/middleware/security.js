@@ -5,44 +5,46 @@ const { UnauthorizedError } = require('../utils/errors');
 //create a function to extract the JWT from the request header
 const jwtFrom = ({ headers }) => {
     if (headers?.authorization) {
-        const [scheme, token] = headers.authorization.split(" ")
+        const [scheme, token] = headers.authorization.split(" ");
         if (scheme.trim() === "Bearer") {
-            return token
+            return token;
         }
     }
 
-    return undefined
+    return undefined;
 }
 
 //create a function to attach the user to the res object
 const extractUserFromJwt = (req, res, next) => {
     try {
-        const token = jwtFrom(req)
+        const token = jwtFrom(req);
         if(token){
-            res.locals.user = jwt.verify(token, SECRET_KEY)
+            res.locals.user = jwt.verify(token, SECRET_KEY);
         }
 
 
-        return next()
-    }catch(error) {
+        return next();
+    }
+    catch(err) {
         return next()
     }
 }
 //crrate a function to verify a authorized user exists
 const requireAuthenticatedUser = (req, res, next) => {
     try {
-        const { user } = res.locals
+        const { user } = res.locals;
         if (!user?.email) {
-            throw new UnauthorizedError()
+            throw new UnauthorizedError();
         }
-        return next()
-    }catch (error) {
-        return next(error)
+        return next();
+    }
+    catch (err) {
+        return next(err);
 
     }
 }
 
 module.exports = {
     requireAuthenticatedUser,
-    extractUserFromJwt
+    extractUserFromJwt,
 }
