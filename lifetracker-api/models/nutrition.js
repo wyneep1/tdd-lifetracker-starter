@@ -4,11 +4,10 @@ const { BadRequestError, NotFoundError } = require("../utils/errors")
 class Nutrition {
 
     static async createNutrition({nutrition, user}) {
-        //create new nutrition
-        const requiredFields = ["name", "category", "calories", "quantity", "image_url"]
+        const requiredFields = ["name", "category", "calories", "quantity", "image_url"];
         requiredFields.forEach(field => {
             if (!nutrition.hasOwnProperty(field)){
-                throw new BadRequestError(`Required field - missing ${field} in request body.`)
+                throw new BadRequestError(`Missing ${field} in request body.`);
             }
         })
         const results = await db.query(`
@@ -21,7 +20,7 @@ class Nutrition {
             user_id
             )
             VALUES ($1, $2, $3, $4, $5, (SELECT id FROM users WHERE email = $6))
-            RETURNING id, name, category, calories, quantity, image_url, user_id, created_at;
+            RETURNING id, name, category, calories, quantity, image_url, user_id, created_at
      `, 
      [nutrition.name, nutrition.category, nutrition.calories, nutrition.quantity, nutrition.image_url, user.email])
 
@@ -29,8 +28,8 @@ class Nutrition {
 }
     static async fetchNutritionById (nutritionId) {
 
-    const results = await db.query(
-        `        SELECT nutr.id,
+    const results = await db.query(`        
+                SELECT nutr.id,
                    nutr.name,
                    nutr.category,
                    nutr.calories,
@@ -45,7 +44,7 @@ class Nutrition {
     )
     const nutrition = results.rows[0]
     if (!nutrition) {
-        throw new NotFoundError("Not nutrition found")
+        throw new NotFoundError()
     }
     return nutrition
 
@@ -53,7 +52,7 @@ class Nutrition {
 }
 
 
-static async listNutritionForUser() {
+static async listNutritionForUser(user) {
     const results = await db.query(
         ` SELECT nutr.id,
                    nutr.name,
@@ -61,11 +60,12 @@ static async listNutritionForUser() {
                    nutr.calories,
                    nutr.quantity,
                    nutr.image_url,
-                   nutr.created_at
+                   nutr.created_at,
+                   u.email as "userEmail"
             FROM nutrition AS nutr
-                LEFT JOIN users AS u ON u.id = nutr.user_id
-            ORDER BY nutr.created_at DESC
-        `,
+                RIGHT JOIN users AS u ON u.id = nutr.user_id
+            WHERE u.email = $1
+        `, [user.email]
     )
     return results.rows
 
