@@ -5,6 +5,7 @@ const express = require("express")
 const morgan = require("morgan")
 const cors = require("cors")
 const { NotFoundError } = require("./utils/errors")
+const activityRoutes = require("./routes/activity")
 
 const app = express()
 
@@ -21,7 +22,7 @@ app.use(security.extractUserFromJwt)
 
 app.use("/auth", authRoutes)
 app.use("/nutrition", nutritionRoutes)
-
+app.use("/activity", activityRoutes);
 app.use((req, res, next) => {
     return next(new NotFoundError())
 })

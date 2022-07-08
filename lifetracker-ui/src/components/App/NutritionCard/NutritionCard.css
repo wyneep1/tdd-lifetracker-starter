@@ -1,0 +1,6 @@
+.nutrition-card {
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}

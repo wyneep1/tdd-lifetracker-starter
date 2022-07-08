@@ -3,11 +3,11 @@ import "./LoginForm.css"
 import {Link, Navigate} from "react-router-dom"
 import { useContext, useState } from "react"
 import AuthContext from "../../../../contexts/auth"
-
+import apiClient from "../../../../services/apiClient"
 
 export default function LoginForm(props){
 
-  const{auth} = useContext(AuthContext)
+  const{auth, setAuth} = useContext(AuthContext)
   const[email, setEmail] = useState("")
   const[password, setPassword] = useState("")
 
@@ -23,8 +23,19 @@ export default function LoginForm(props){
 }
 async function signUp(e){
   e.preventDefault();
- props.handleSubmittedLogin(email, password)
+  const { data, error} = await apiClient.loginUser({email: email, password: password})
+  if(error) {
+    props.setError(error)
+    }
+    if(data?.user) {
+      setAuth(true)
+      apiClient.setToken(data.token);
+
+  }
 }
+
+
+
     return(
         <div className="login-form">
           {auth && <Navigate to="/activity" replace={true} />}

@@ -2,9 +2,10 @@ import { useState, useContext } from "react"
 import { Navigate } from "react-router-dom";
 import "./RegistrationForm.css"
 import AuthContext from "../../../../contexts/auth";
+import apiClient from "../../../../services/apiClient";
 export default function RegistrationForm(props){
 
-const{auth} = useContext(AuthContext);
+const{auth, setAuth} = useContext(AuthContext);
 const[email, setEmail] = useState("")
 const[username, setUsername]=useState("")
 const[first_name, setFirstName]=useState("")
@@ -40,9 +41,16 @@ async function signUp(e){
     } else{
         props.setError("")
     }
-    props.handleRegistration(username, password, email, first_name, last_name)
-}
+    const { data, error} = await apiClient.signupUser({username: username, password: password, email: email, first_name: first_name, last_name: last_name})
+    if(error) {
+        setError(error)
+    }
+    if(data?.user) {
+        setAuth(true)
+        apiClient.setToken(data.token)
+    }
 
+}
 
 return(
     <form className='registration-form'>

@@ -26,10 +26,11 @@ router.post("/", security.requireAuthenticatedUser, async (req, res, next) => {
         next(err)
     }
 })
-router.get("/:nutritionId", async (req, res, next) => {
+router.get("/id/:nutritionId", async (req, res, next) => {
     try {
-        const { nutritionId } = req.params
+        const { nutritionId } = req.params.nutritionId
         const nutrition = await Nutrition.fetchNutritionById(nutritionId)
+        console.log(JSON.stringify(nutrition))
         return res.status(200).json({ nutrition })
     }
     catch(err) {

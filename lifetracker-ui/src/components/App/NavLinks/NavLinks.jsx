@@ -11,7 +11,7 @@ export default function NavLinks(props){
     return(
         <div className="nav-links">
             <Link className="nav-link" to="/activity"> Activity</Link>
-            <Link className="nav-link" to="/nutrition/*"> Nutrition</Link>
+            <Link className="nav-link" to="/nutrition/"> Nutrition</Link>
             {(!props.auth) ? <Link className="nav-link" to="/login"> Login</Link>: null}
             {(props.auth) ? <Link className='nav-link' to="/" onClick={props.handleLogin}> Log Out</Link>: null}
             {(!props.auth) ? <Link className='nav-link'to="/register">Sign Up</Link>: null}
