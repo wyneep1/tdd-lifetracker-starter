@@ -3,7 +3,7 @@ Submitted by: Wynee Pintado
 
 Deployed Application: Lifetracker Deployed Site
 Video Part 2:
-`https://recordit.co/TsFIwCF0Wq`
+`https://recordit.co/7wPefnCoEX`
 
 ## Application Features
 
