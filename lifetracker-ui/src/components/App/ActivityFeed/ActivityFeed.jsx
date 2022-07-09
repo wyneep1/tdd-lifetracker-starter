@@ -5,18 +5,22 @@ export default function ActivityFeed(props){
     return (
         <div className='activity-feed'>
             <div className='per-category'>
-            <div className="nutrition">
-                <h4> Average Daily Calories </h4>
+              <div className="box-1">
+                  <div className="nutrition">
+                <h2> Average Daily Calories </h2>
                 </div>
-                {props.activity?.map((activity) => (
-                    <SummaryStat stat={activity.calories} label={activity.category} substat={activity.created_at}/>
+                {props?.activity?.map((activity) => (
+                    <SummaryStat stat={parseInt(activity?.calories).toFixed(2)} label={activity?.category} substat={activity?.created_at?.substring(0,10)}/>
                 ))}
-                <div className="nutrition">
-                <h4> Total Calories Per Day </h4>
+                  </div>
+                <div className="box-2">
+                  <div className="nutrition">
+                <h2> Total Calories Per Day </h2>
+                  </div>
+                {props?.activity2?.map((activity) => (
+                    <SummaryStat stat={parseInt(activity?.calories).toFixed(2)} label={activity?.category} substat={activity?.created_at.substring(0,10)}/>
+                ))}
                 </div>
-                {props.activity2?.map((activity) => (
-                    <SummaryStat stat={activity.calories} label={activity.category} substat={activity.created_at}/>
-                ))}
             </div>
         </div>
     )  

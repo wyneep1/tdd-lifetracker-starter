@@ -26,10 +26,11 @@ useEffect(async () => {
     const data = await apiClient.calculateDailyCaloriesSummaryStats()
     console.log(data)
     console.log("reached 2")
-        setActivity(data.activity) 
+        setActivity(data?.data?.dailyCalories) 
     const response = await apiClient.calculatePerCategoryCaloriesSummaryStats()
     console.log(response)
-    setActivity2(response.activity2)
+        setActivity2(response?.data?.totalCalories)
+    console.log("reached 3")
 
 } catch(err){
     setError(err)

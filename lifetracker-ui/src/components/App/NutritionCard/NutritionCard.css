@@ -1,6 +1,14 @@
 .nutrition-card {
-    border-radius: 4px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     position: relative;
+    border: 5px solid white;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 320px;
+    margin-top: 20px;
+}
+.nutrition-image{
+width: 300px;
 }

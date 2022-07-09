@@ -15,7 +15,7 @@ export default function NutritionPage(){
     const {auth} = useContext(AuthContext)
     const {nutritionContext, loadingContext, errorContext}= useContext(NutritionContext);
     const [nutritions, setNutritions] = nutritionContext
-    
+    console.log("nutrition here", nutritions)
     return(
         <div className="nutrition-page">
             {!auth && <Navigate to="/login" replace={true} />}

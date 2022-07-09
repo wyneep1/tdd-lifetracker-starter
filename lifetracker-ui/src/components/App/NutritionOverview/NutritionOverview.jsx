@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import NutritionFeed from "../NutritionFeed/NutritionFeed";
 import AuthContext from "../../../../contexts/auth";
 import NutritionContext from "../../../../contexts/nutrition"
+import "./NutritionOverview.css"
 export default function NutritionOverview() {
     //should call the useNutritionContext hook and extract all the necessary data from it.
     // const {auth} = useContext(AuthContext)
@@ -17,9 +18,9 @@ export default function NutritionOverview() {
         <div className="nutrition-overview">
             {/* {!auth && <Navigate to="/login" replace={true} />} */}
             <div className="nHeader">
-                <h1>Overview</h1>
+                <h2 className='head'>Overview</h2>
                 <Link to="/nutrition/create">
-                    <button>Record Nutrition</button>
+                    <button className="nBtn">Record Nutrition</button>
                 </Link>
             </div>
             {error ? <span className="error">Something went wrong</span>: null}

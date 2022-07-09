@@ -1,0 +1,17 @@
+.nBtn{
+    box-shadow: rgb(27, 143, 85);
+	border-radius:5px;
+	border:1px solid rgb(27, 143, 85);
+	display:inline-block;
+	cursor:pointer;
+	color:rgb(27, 143, 85);
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+	text-shadow:rgb(27, 143, 85);
+    background-color: none;
+}
+.head{
+   text-align: center;
+}

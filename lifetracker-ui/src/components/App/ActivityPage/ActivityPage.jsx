@@ -13,12 +13,12 @@ export default function ActivityPage() {
   const [error, setError] = errorContext
   const [activity, setActivity] = activityContext
   const [activity2, setActivity2] = activityContext2
-
+  console.log(activity)
   return (
-    <div >
+    <div className="activity-page">
       {!auth && <Navigate to="/login" replace={true}/>}
       <h1>Activity Feed</h1>
-    <ActivityFeed activity={activity } activity2={activity2}/>
+    <ActivityFeed activity={activity} activity2={activity2}/>
     </div>
   ) }  
 

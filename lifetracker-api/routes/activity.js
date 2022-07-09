@@ -19,8 +19,8 @@ try {
 router.get("/totalCalories", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const {email} = res.locals.user
-        const totCalories = await Activity.calculatePerCategoryCaloriesSummaryStats(email);
-        return res.status(200).json({ totalCalories: totCalories })
+        const totalCalories = await Activity.calculatePerCategoryCaloriesSummaryStats(email);
+        return res.status(200).json({ totalCalories: totalCalories })
     }
     catch (err) {
         next(err);
