@@ -2,6 +2,8 @@ Week 3 Assignment: Life Tracker
 Submitted by: Wynee Pintado
 
 Deployed Application: Lifetracker Deployed Site
+Video Part 2:
+`https://recordit.co/TsFIwCF0Wq`
 
 ## Application Features
 
