@@ -1,7 +1,7 @@
 Week 3 Assignment: Life Tracker
 Submitted by: Wynee Pintado
 
-Deployed Application: Lifetracker Deployed Site
+Deployed Application: Lifetracker Deployed Site (http://immense-amount.surge.sh/)
 
 ## Application Features
 
@@ -18,12 +18,12 @@ Deployed Application: Lifetracker Deployed Site
 - [X] Users have access to an overview Activity page that show one summary statistic about each of the 3 types of activity tracked.
 - [X] The API should have a `security` middleware that only allows authenticated users to access resources and only allows users to access resources about themselves. 
 - [X] Users should have the ability to track at least **1** types of activities (i.e Nutrition, Exercise, Sleep, etc.). Each activity should be tracked on separate pages.
-- [ ] Deployed website with Heroku & Surge. 
+- [X] Deployed website with Heroku & Surge. 
 
 **Detailed Activity Page:**
 - [X] The detailed activity page should display a feed of all previous tracked activities.
 - [X] The detailed activity should contain a form to contain relevant information. (i.e if tracking nutrition this form allows the user to capture calories, timestamp, image, category, etc.) 
-- [] The activity tracked should be given a unique id for easy lookup.
+- [X] The activity tracked should be given a unique id for easy lookup.
   `TODO://` Add link to table schema in the link code below. Your file should end in `.sql` and show your schema for the detailed activities table. (🚫 Remove this paragraph after adding schema link)
   * [Table Schema](📝ADD LINK TO TABLE SCHEMA.sql HERE!) 
 
