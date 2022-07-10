@@ -47,15 +47,15 @@ Video Part 2:
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Well it helped me complete most of the assignment, except the security middleware as I had to some research on my own. But even though I felt unprepared for it, I was able to find resources to direct me there.
+Well it helped me complete most of the assignment, except the security middleware and auth context providers as I had to some research on my own. But even though I felt unprepared for it, I was able to find resources to direct me there.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-if I had more time, I would definitely have added additional features like connecting the nutrition form to the nutrition page so that the UI would receive this information. I would also probably change the way I am connecting to the API as right now I am using axios for both the register and login page which makes my app.jsx longer than it should be. Possibly putting all of that in another page would be cool as I've heard of API client would allow for that functionality.
+If I had more time, I would definitely have added additional features like an exercise page and also more CSS because at the moment it is lacking .
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-I think what went well was being able to display everything I was able to accomplish so far. Even though I was definitely disappointed that I couldn't get through all core features by that time, I definitely feel good of what I was able to do regardless. I definitely liked what my other peers did with their nutrition forms, especially in terms of CSS and would love to accomplish that next.
+I think what went well was being able to display everything I was able to accomplish so far. Even though I had not connected my activity page at that moment like I have it now, I feel proud of being able to get through it. I definitely liked what my other peers did with their extra forms, especially in terms of CSS and would love to accomplish that next.
 
 ### Open-source libraries used
 
@@ -65,4 +65,4 @@ I think what went well was being able to display everything I was able to accomp
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 
-Shout out to my podmates Deland and Enzo as they helped out a ton when I got stuck, especially with connecting the API to the UI. 
+Shout out to Travis, my podmates Deland and Enzo as they helped out a ton when I got stuck, especially with connecting the API to the UI, and deployment! 
